@@ -46,7 +46,10 @@
     "visitQueueNumberAttributeUuid": "",
     "defaultFacilityUrl": ""
   },
+
   "@openmrs/esm-styleguide": {
-    "Brand color #1": "#005d5d"
+    "Brand color #1": "#0F9297",
+    "Brand color #2": "#0F9297",
+    "Brand color #3": "#0F9297"
   }
 }

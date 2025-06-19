@@ -9,8 +9,17 @@ ARG APP_SHELL_VERSION=next
 RUN mkdir -p /app
 WORKDIR /app
 
+
+COPY packages/openmrs-esm-primary-navigation-app-6.3.0-trigonal.tgz .
+COPY packages/openmrs-esm-login-app-6.3.0-trigonal.tgz .
+# COPY packages/openmrs-esm-patient-chart-app-10.2.0-trigonal.tgz .
+
 COPY spa-assemble-config.json .
 COPY spa-build-config.json .
+
+RUN yarn add ./openmrs-esm-login-app-6.3.0-trigonal.tgz
+RUN yarn add ./openmrs-esm-primary-navigation-app-6.3.0-trigonal.tgz
+# RUN yarn add ./openmrs-esm-patient-chart-app-10.2.0-trigonal.tgz
 
 ARG CACHE_BUST
 RUN npx --legacy-peer-deps openmrs@${APP_SHELL_VERSION:-next} assemble --manifest --mode config --config spa-assemble-config.json --target ./spa
@@ -37,5 +46,11 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=dev /app/spa /usr/share/nginx/html
 COPY config-core_demo.json /usr/share/nginx/html
+
+
+#Replace logo
+COPY resources/logo.png /usr/share/nginx/html
+COPY resources/logo-white.png /usr/share/nginx/html
+COPY resources/favicon.ico /usr/share/nginx/html
 
 CMD ["/usr/local/bin/startup.sh"]

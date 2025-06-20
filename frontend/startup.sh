@@ -47,10 +47,12 @@ else
 fi
 
 SPA_DEFAULT_LOCALE=${SPA_DEFAULT_LOCALE:-en_GB}
+APP_TITLE=${APP_TITLE:-"ThanksDoctor"}
 
 # Substitute environment variables in the html file
 # This allows us to override parts of the compiled file at runtime
 if [ -f "/usr/share/nginx/html/index.html" ]; then
+  sed -i "s|<title>.*</title>|<title>${APP_TITLE}</title>|" "/usr/share/nginx/html/index.html"
   envsubst '${IMPORTMAP_URL} ${SPA_PATH} ${API_URL} ${SPA_CONFIG_URLS} ${SPA_DEFAULT_LOCALE}' < "/usr/share/nginx/html/index.html" | sponge "/usr/share/nginx/html/index.html"
 fi
 

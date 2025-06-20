@@ -12,7 +12,6 @@
     "@openmrs/esm-form-engine-app": "next",
     "@openmrs/esm-generic-patient-widgets-app": "next",
     "@openmrs/esm-home-app": "next",
-    "@openmrs/esm-implementer-tools-app": "next",
     "@openmrs/esm-laboratory-app": "next",
     "@openmrs/esm-login-app": "openmrs-esm-login-app-6.3.0-trigonal.tgz",
     "@openmrs/esm-openconceptlab-app": "next",
@@ -42,5 +41,5 @@
     "@openmrs/esm-user-onboarding-app": "next",
     "@openmrs/esm-ward-app": "next"
   },
-  "excludedFrontendModules": []
+  "excludedFrontendModules": [ "@openmrs/esm-implementer-tools-app"]
 }

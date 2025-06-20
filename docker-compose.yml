@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   gateway:
-    image: openmrs/openmrs-reference-application-3-gateway:${TAG:-qa}
+    image: thanksdoc/thanksdocapp_gateway:tag_1
     restart: "unless-stopped"
     depends_on:
       - frontend
@@ -15,7 +15,7 @@ services:
     image: thanksdoc/thanksdocapp_frontend:tag_5
     restart: "unless-stopped"
     environment:
-      SPA_PATH: /openmrs/spa
+      SPA_PATH: /thanksdoc/spa
       API_URL: /openmrs
       SPA_CONFIG_URLS: /openmrs/spa/config-core_demo.json
       SPA_DEFAULT_LOCALE:

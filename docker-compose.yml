@@ -3,6 +3,7 @@ version: "3.7"
 services:
   gateway:
     image: thanksdoc/thanksdocapp_gateway:tag_1
+    # image: thanksdocapp_gateway:tag_1
     restart: "unless-stopped"
     depends_on:
       - frontend
@@ -12,7 +13,8 @@ services:
 
   frontend:
     # image: openmrs/openmrs-reference-application-3-frontend:${TAG:-qa}
-    image: thanksdoc/thanksdocapp_frontend:tag_6
+    image: thanksdoc/thanksdocapp_frontend:tag_7
+    # image: thanksdocapp_frontend:tag_7
     restart: "unless-stopped"
     environment:
       SPA_PATH: /thanksdoc/spa

@@ -20,6 +20,7 @@ RUN cp /openmrs_distro/distro/target/sdk-distro/web/openmrs-distro.properties /o
 RUN cp -R /openmrs_distro/distro/target/sdk-distro/web/openmrs_modules /openmrs/distribution/openmrs_modules/
 RUN cp -R /openmrs_distro/distro/target/sdk-distro/web/openmrs_owas /openmrs/distribution/openmrs_owas/
 RUN cp -R /openmrs_distro/distro/target/sdk-distro/web/openmrs_config /openmrs/distribution/openmrs_config/
+RUN cp -R /openmrs_distro/distro/backend_modules/referencedemodata-2.6.0-SNAPSHOT.omod /openmrs/distribution/openmrs_modules/
 
 # Clean up after copying needed artifacts
 RUN mvn $MVN_ARGS_SETTINGS clean

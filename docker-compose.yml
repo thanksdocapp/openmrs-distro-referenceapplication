@@ -3,7 +3,7 @@ version: "3.7"
 services:
   gateway:
     # image: openmrs/openmrs-reference-application-3-gateway:${TAG:-qa}
-    image: thanksdocapp_gateway:tag_2
+    image: thanksdoc/thanksdocapp_gateway:tag_8
     restart: "unless-stopped"
     depends_on:
       - frontend

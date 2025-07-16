@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
   gateway:
-    image: thanksdoc/thanksdocapp_gateway:tag_1
-    # image: thanksdocapp_gateway:tag_1
+    # image: openmrs/openmrs-reference-application-3-gateway:${TAG:-qa}
+    image: thanksdocapp_gateway:tag_2
     restart: "unless-stopped"
     depends_on:
       - frontend
@@ -13,13 +13,13 @@ services:
 
   frontend:
     # image: openmrs/openmrs-reference-application-3-frontend:${TAG:-qa}
-    image: thanksdoc/thanksdocapp_frontend:tag_7
+    image: thanksdoc/thanksdocapp_frontend:tag_8
     # image: thanksdocapp_frontend:tag_7
     restart: "unless-stopped"
     environment:
       SPA_PATH: /thanksdoc/spa
       API_URL: /openmrs
-      SPA_CONFIG_URLS: /openmrs/spa/config-core_demo.json
+      SPA_CONFIG_URLS: /thanksdoc/spa/config-core_demo.json
       SPA_DEFAULT_LOCALE:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/"]
@@ -29,7 +29,7 @@ services:
 
   backend:
     # image: openmrs/openmrs-reference-application-3-backend:${TAG:-qa}
-    image: thanksdoc/thanksdocapp_backend:tag_3
+    image: thanksdoc/thanksdocapp_backend:tag_4
     restart: "unless-stopped"
     depends_on:
       - db

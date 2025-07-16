@@ -12,6 +12,7 @@ WORKDIR /app
 
 COPY packages/openmrs-esm-primary-navigation-app-6.3.0-trigonal.tgz .
 COPY packages/openmrs-esm-login-app-6.3.0-trigonal.tgz .
+COPY packages/openmrs-esm-home-app-8.5.0.tgz .
 # COPY packages/openmrs-esm-patient-chart-app-10.2.0-trigonal.tgz .
 
 COPY spa-assemble-config.json .
@@ -19,6 +20,7 @@ COPY spa-build-config.json .
 
 RUN yarn add ./openmrs-esm-login-app-6.3.0-trigonal.tgz
 RUN yarn add ./openmrs-esm-primary-navigation-app-6.3.0-trigonal.tgz
+RUN yarn add ./openmrs-esm-home-app-8.5.0.tgz
 # RUN yarn add ./openmrs-esm-patient-chart-app-10.2.0-trigonal.tgz
 
 ARG CACHE_BUST

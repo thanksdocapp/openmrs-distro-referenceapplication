@@ -13,7 +13,7 @@ services:
 
   frontend:
     # image: openmrs/openmrs-reference-application-3-frontend:${TAG:-qa}
-    image: thanksdoc/thanksdocapp_frontend:tag_8
+    image: thanksdoc/thanksdocapp_frontend:tag_9
     # image: thanksdocapp_frontend:tag_7
     restart: "unless-stopped"
     environment:
